@@ -1,9 +1,9 @@
 <section class="cart-show">
 
-  <header class="page-header">
-    <h1>My Cart</h1>
+<% if !enhanced_cart.empty? %>
+<header class="page-header">
+<h1>My Cart</h1>
   </header>
-
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -33,8 +33,8 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12">
-      <%= form_tag orders_path do %>
+  <div class="col-xs-12">
+  <%= form_tag orders_path do %>
         <script
           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -48,5 +48,13 @@
       <% end %>
     </div>
   </div>
+
+<% else %>
+<h3>Your cart is empty!</h3>
+<br>
+<%= link_to 'Click here to go back to home page', products_path, class: 'alert alert-warning' %>
+<% end %>
+
+
 
 </section>
