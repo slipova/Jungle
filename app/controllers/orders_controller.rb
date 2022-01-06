@@ -2,7 +2,13 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
   end
+
+  def order_subtotal_cents
+    @order_items.map {|item| item.price_cents * item[:quantity]}.sum
+  end
+  helper_method :order_subtotal_cents
 
   def create
     charge = perform_stripe_charge
