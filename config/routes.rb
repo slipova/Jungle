@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
     resources :dashboard, except: [:edit, :update, :show]
     resources :categories, except: [:edit, :update, :show, :destroy]
+    resources :sales, only: [:index, :new]
   end
   
   
