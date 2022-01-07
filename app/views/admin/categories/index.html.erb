@@ -4,15 +4,12 @@
     <h1>Admin &raquo; All Categories</h1>
   </header>
 
+</section>
   
-  </section>
-  
-  <ul>
-  <%= render @categories %>
-  
-  </ul>
-  
-
+    <ul>
+      <%= render @categories %>
+    </ul>
+    
   <div class="well">
   <%= link_to '+ Add Category', [:new, :admin, :category], class: 'btn btn-info' %>
   </div>

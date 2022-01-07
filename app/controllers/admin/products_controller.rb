@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
-  protect_from_forgery with: :exception
-  http_basic_authenticate_with name: ENV['NAME'], password: ENV['PASSWORD'], only: [:admin, :new, :edit, :destroy]
+  
+  http_basic_authenticate_with name: ENV['NAME'], password: ENV['PASSWORD']
+  
   def index
     @products = Product.order(id: :desc).all
   end
