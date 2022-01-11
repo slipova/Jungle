@@ -12,4 +12,13 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   validates :password_confirmation, confirmation: { case_sensitive: true }
 
+  def self.authenticate_with_credentials(email, password)
+    user = self.find_by_email(email.strip.downcase)
+    if user && user.authenticate(password)
+      user
+    else
+      nil
+    end
+  end
+
 end

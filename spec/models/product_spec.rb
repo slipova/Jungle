@@ -9,7 +9,7 @@ RSpec.describe Product, type: :model do
     end
 
     after(:each) do
-      @product.errors.full_messages
+      puts @product.errors.full_messages
     end
 
     describe "@product" do
