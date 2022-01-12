@@ -1,6 +1,14 @@
 # Jungle
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+In this version, there were a few UI/UX bugs fixed:
+
+* money formatting was made consistent throughout the platform
+* shopping cart was updated to make plaacing an order more intuitive
+* a "sold out" badge was added to items that are out of stock
+* bulletproof protection implemented in the admin pages
+
+You will also find a set of new tests to make bug tracking simpler!
 
 ## Additional Steps for Apple M1 Machines
 
@@ -26,8 +34,22 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
+
+## Final Product
+
+ ![Placed order](https://github.com/slipova/Jungle/blob/master/docs/order_placed.png)
+ ![Sold out badge](https://github.com/slipova/Jungle/blob/master/docs/badge.png)
+ ![Dashboard](https://github.com/slipova/Jungle/blob/master/docs/dashboard.png)
+ ![Product details](https://github.com/slipova/Jungle/blob/master/docs/product_details.png)
+
 ## Dependencies
 
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+### Testing
+
+* Capybara
+* Poltergeist
+* Database Cleaner
