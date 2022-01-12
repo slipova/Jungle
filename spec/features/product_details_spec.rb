@@ -18,7 +18,7 @@ RSpec.feature "users navigate from home page to product detail page by clicking 
     end
   end
 
-  scenario "They see paroduct details page" do
+  scenario "They see product details page" do
     # # ACT
 
     visit root_path
